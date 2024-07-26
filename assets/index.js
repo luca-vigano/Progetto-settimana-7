@@ -27,7 +27,8 @@ const getProduct = function () {
                                 <p class="card-text">${product.description}</p>
                                 <p class="card-text">${product.brand}</p>
                                 <p class="card-text">${product.price}€</p>
-                                <a href="#" class="btn btn-danger w-100">COMPRA</a>
+                                <a href="details.html?productId=${product._id}" class="btn btn-warning my-3 w-100">SPECIFICHE</a>
+                                <a href="#" class="btn btn-danger w-100">COMPRA ORA!</a>
                             </div>
                         </div>
                     </div>
