@@ -5,6 +5,31 @@
 // "imageUrl"
 // "price"
 
+const urlParameters = new URLSearchParams(location.search)
+const productId = urlParameters.get("productId")
+
+if(productId) {
+    fetch("https://striveschool-api.herokuapp.com/api/product/" + productId, {
+        headers: {
+            "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmEzNWFjYmYyNjBjYzAwMTVjYzBkZGIiLCJpYXQiOjE3MjE5ODE2NDMsImV4cCI6MTcyMzE5MTI0M30.NB77mKPUYENKSvg3TEHSp0e4536g_p7lHxz0F_YHWKg"
+        }
+    })
+    .then(response => {
+        if(response.ok){
+            return response.json()
+        } else {
+            throw new Error("impossibile recuperare il prodotto")
+        }
+    })
+    .then((singleComponent) => {
+        console.log("componente richiamato",singleComponent)
+    })
+    .catch((error) => {
+        console.log(error)
+    })
+}
+
+
 
 const productForm = document.getElementById("product-form")
 productForm.addEventListener("submit", function (event) {

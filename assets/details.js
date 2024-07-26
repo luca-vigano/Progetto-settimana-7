@@ -35,8 +35,8 @@ fetch(productURL + productId, {
                         <h2>ADMIN CONTROL PANNEL</h2>
                         <p>tu utente non mi vedi ;)</p>
                         <div>
-                            <button class="btn btn-light text-warning btn-lg">MODIFICA</button>                        
-                            <button class="btn btn-light text-danger btn-lg">ELIMINA</button>                        
+                            <a href="backoffice.html?productId=${singleComponent._id}" class="btn btn-light text-warning btn-lg">MODIFICA</a>                        
+                            <button class="btn btn-light text-danger btn-lg" onclick="deleteComponent()" >ELIMINA</button>                        
                         </div>
                     </div>
                 </div>
@@ -46,3 +46,24 @@ fetch(productURL + productId, {
     .catch((error) => {
         console.log("ERRORE", error)
     })
+
+
+    const deleteComponent = function (){
+        fetch(productURL + productId, {
+            method:"DELETE",
+            headers: {
+                "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmEzNWFjYmYyNjBjYzAwMTVjYzBkZGIiLCJpYXQiOjE3MjE5ODE2NDMsImV4cCI6MTcyMzE5MTI0M30.NB77mKPUYENKSvg3TEHSp0e4536g_p7lHxz0F_YHWKg"
+            }
+        })
+        .then(response => {
+            if(response.ok){
+                alert("HAI CANCELLATO IL PRODOTTO!")
+                location.assign("index.html")
+            } else {
+                throw new Error("errore nella cancellazione prodotto")
+            }
+        })
+        .catch((error) => {
+            console.log("errore nella cancellazione", error)
+        })
+    }

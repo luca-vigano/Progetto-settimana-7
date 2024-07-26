@@ -20,7 +20,7 @@ const getProduct = function () {
             arrayOfProduct.forEach(product => {
                 const newProductCol = `
                     <div class="col">
-                        <div class="card">
+                        <div class="card text-bg-dark">
                             <img src=${product.imageUrl} class="card-img-top p-3" alt="immagine componente">
                             <div class="card-body text-center">
                                 <h2 class="card-title">${product.name}</h3>
