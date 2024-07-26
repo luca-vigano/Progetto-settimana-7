@@ -33,9 +33,9 @@ const getProduct = function () {
                 `
 
                 const partsRow = document.getElementById("components-row")
-                partsRow.innerHTML += newProductCol 
+                partsRow.innerHTML += newProductCol
             });
-            
+
 
         })
         .catch((error) => {
