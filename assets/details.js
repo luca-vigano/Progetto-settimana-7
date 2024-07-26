@@ -21,7 +21,7 @@ fetch(productURL + productId, {
 
         const infoRow = document.getElementById("info-row")
         infoRow.innerHTML = `
-            <div class="col">
+            <div class="col-12 col-md-10">
                 <div class="card">
                     <img src=${singleComponent.imageUrl} class="card-img-top p-3" alt="immagine componente">
                     <div class="card-body text-center">
@@ -34,9 +34,6 @@ fetch(productURL + productId, {
                 </div>
             </div>
         `
-            //alla col ho lasciato col-12 per avere la card in grande anche a schermo lg 
-            // dato che è una pagina di dettaglio per UN SOLO PRODOTTO QUINDI UNA SOLA CARD
-            // è inutile quindi dire quante card per colonna visualizzare ai vari bp
     })
     .catch((error) => {
         console.log("ERRORE", error)
