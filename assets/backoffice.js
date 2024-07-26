@@ -22,7 +22,12 @@ if(productId) {
         }
     })
     .then((singleComponent) => {
-        console.log("componente richiamato",singleComponent)
+        console.log("componente richiamato", singleComponent)
+        document.getElementById("name").value = singleComponent.name
+        document.getElementById("description").value = singleComponent.description
+        document.getElementById("brand").value = singleComponent.brand
+        document.getElementById("imageUrl").value = singleComponent.imageUrl
+        document.getElementById("price").value = singleComponent.price
     })
     .catch((error) => {
         console.log(error)
@@ -55,8 +60,25 @@ productForm.addEventListener("submit", function (event) {
         price: priceValue,
     }
 
-    fetch("https://striveschool-api.herokuapp.com/api/product/", {
-        method: "POST",
+
+    let methodToUse
+    if(productId){
+        methodToUse= "PUT"
+    } else {
+        methodToUse = "POST"
+    }
+
+    let urlToUse
+    if(productId) {
+        urlToUse = URL + productId
+    } else {
+        urlToUse = URL
+    }
+
+    const URL = "https://striveschool-api.herokuapp.com/api/product/"
+
+    fetch(urlToUse, {
+        method: methodToUse,
         body: JSON.stringify(newProduct),
         headers: {
             "Content-Type": "application/json",
