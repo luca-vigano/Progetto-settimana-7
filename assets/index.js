@@ -21,11 +21,12 @@ const getProduct = function () {
                 const newProductCol = `
                     <div class="col">
                         <div class="card">
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOOv8VzVPsbqmuNazJajM7nrYVxnOIfP5BZw&s" class="card-img-top" alt="immagine componente">
+                            <img src=${product.imageUrl} class="card-img-top p-3" alt="immagine componente">
                             <div class="card-body text-center">
-                                <h5 class="card-title">Nome Prodotto</h5>
-                                <p class="card-text">Descrizione prodotto</p>
-                                <p class="card-text">Prezzo</p>
+                                <h3 class="card-title">${product.name}</h3>
+                                <p class="card-text">${product.description}</p>
+                                <p class="card-text">${product.brand}</p>
+                                <p class="card-text">${product.price}€</p>
                                 <a href="#" class="btn btn-danger w-100">COMPRA</a>
                             </div>
                         </div>

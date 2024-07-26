@@ -36,6 +36,17 @@ productForm.addEventListener("submit", function (event) {
         headers: {
             "Content-Type": "application/json",
             "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmEzNWFjYmYyNjBjYzAwMTVjYzBkZGIiLCJpYXQiOjE3MjE5ODE2NDMsImV4cCI6MTcyMzE5MTI0M30.NB77mKPUYENKSvg3TEHSp0e4536g_p7lHxz0F_YHWKg"
+        },
+    })
+    .then(response => {
+        if (response.ok) {
+            alert("SALVATAGGIO RIUSCITO")
+        } else {
+            alert("ERRORE NEL SALVATAGIO")
+            throw new Error ("errore nel salvataggio")
         }
+    })
+    .catch((error) => {
+        console.log("errore", error)
     })
 })
