@@ -23,10 +23,9 @@ const getProduct = function () {
                         <div class="card">
                             <img src=${product.imageUrl} class="card-img-top p-3" alt="immagine componente">
                             <div class="card-body text-center">
-                                <h3 class="card-title">${product.name}</h3>
-                                <p class="card-text">${product.description}</p>
+                                <h2 class="card-title">${product.name}</h3>
                                 <p class="card-text">${product.brand}</p>
-                                <p class="card-text">${product.price}€</p>
+                                <p class="card-text fs-3">${product.price}€</p>
                                 <a href="details.html?productId=${product._id}" class="btn btn-warning my-3 w-100">SPECIFICHE</a>
                                 <a href="#" class="btn btn-danger w-100">COMPRA ORA!</a>
                             </div>
