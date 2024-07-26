@@ -21,15 +21,23 @@ fetch(productURL + productId, {
 
         const infoRow = document.getElementById("info-row")
         infoRow.innerHTML = `
-            <div class="col-12 col-md-10">
-                <div class="card">
+            <div class="col-12 col-md-8 text-center">
+                <div class="card text-bg-dark">
                     <img src=${singleComponent.imageUrl} class="card-img-top p-3" alt="immagine componente">
                     <div class="card-body text-center">
                         <h2 class="card-title fs-1">${singleComponent.name}</h2>
                         <p class="card-text fs-3">${singleComponent.description}</p>
                         <p class="card-text fs-3">${singleComponent.brand}</p>
                         <p class="card-text fs-2">${singleComponent.price}€</p>
-                        <a href="#" class="btn btn-danger w-100">COMPRA ORA!</a>
+                        <a href="#" class="btn btn-danger my-3 w-100 btn-lg">COMPRA ORA!</a>
+                    </div>
+                    <div>
+                        <h2>ADMIN CONTROL PANNEL</h2>
+                        <p>tu utente non mi vedi ;)</p>
+                        <div>
+                            <button class="btn btn-light text-warning btn-lg">MODIFICA</button>                        
+                            <button class="btn btn-light text-danger btn-lg">ELIMINA</button>                        
+                        </div>
                     </div>
                 </div>
             </div>
