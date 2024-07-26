@@ -60,6 +60,7 @@ productForm.addEventListener("submit", function (event) {
         price: priceValue,
     }
 
+    const URL = "https://striveschool-api.herokuapp.com/api/product/"
 
     let methodToUse
     if(productId){
@@ -75,7 +76,6 @@ productForm.addEventListener("submit", function (event) {
         urlToUse = URL
     }
 
-    const URL = "https://striveschool-api.herokuapp.com/api/product/"
 
     fetch(urlToUse, {
         method: methodToUse,
